@@ -61,7 +61,7 @@ const AppProvider = ({ children }) => {
 
   //axios
   const authFetch = axios.create({
-    baseURL: '/api/v1',
+    baseURL: 'https://jobify-mir.herokuapp.com/api/v1',
   });
   // request interceptor
   authFetch.interceptors.request.use(
@@ -111,7 +111,7 @@ const AppProvider = ({ children }) => {
     dispatch({ type: SETUP_USER_BEGIN });
     try {
       const { data } = await axios.post(
-        `/api/v1/auth/${endPoint}`,
+        `https://jobify-mir.herokuapp.com/api/v1/auth/${endPoint}`,
         currentUser
       );
 
